@@ -16,17 +16,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Load configuration
-	cfg, err := LoadINI("openai.ini")
-	if err != nil {
-		fmt.Printf("Failed to read config file: %v\n", err)
-		os.Exit(1)
-	}
+	// Get API key from environment variable
+	apiKey := os.Getenv("OPENAI_API_KEY")
+	model := "gpt-4o-mini" // default model
 
-	apiKey := cfg["shai"]["api_key"]
-	model := cfg["shai"]["model"]
-	if apiKey == "" || model == "" {
-		fmt.Println("Missing API key or model in configuration.")
+	if apiKey == "" {
+		fmt.Println("Please set the OPENAI_API_KEY environment variable")
 		os.Exit(1)
 	}
 
