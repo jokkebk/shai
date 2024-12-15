@@ -17,10 +17,12 @@ go build -o shai
 1. Get your OpenAI API key from https://platform.openai.com/
 
 2. Configure Fish shell:
-   Add the following to your Fish config (`~/.config/fish/config.fish`):
+   Copy `shai_transform.fish` to `~/.config/fish/functions`
+
+3. Add the following to your Fish config (`~/.config/fish/config.fish`):
 
    ```sh
-   bind \r shai_transform /path/to/shai your_openai_api_key
+   bind \r 'shai_transform /path/to/shai your_openai_api_key'
    ```
 
 ## Usage
