@@ -12,7 +12,7 @@ A command-line tool that converts natural language descriptions into Unix comman
 go build -o shai
 ```
 
-## Configuration
+## Configuration in Fish
 
 1. Get your OpenAI API key from https://platform.openai.com/
 
@@ -24,6 +24,14 @@ go build -o shai
    ```sh
    bind \r 'shai_transform /path/to/shai your_openai_api_key'
    ```
+
+## Configuration in bash and zsh
+
+Separate `shai_transform.bash` and `shai_transform.zsh` scripts are provided
+for `bash` and `zsh` shells. As binding `enter` is quite hard, these rely
+instead on keybinding (ctrl-q in the examples) than comment-style conversion.
+
+Bash 4.0 or newer is required due to `bind -x` / readline support.
 
 ## Usage
 
